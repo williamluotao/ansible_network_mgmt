@@ -2,7 +2,7 @@
   hosts: all
   gather_facts: no
   vars:
-	ansible_network_os: cisco.ios
+    ansible_network_os: cisco.ios
   tasks:
     - name: Show running configuration
       ansible.netcommon.cli_command:
