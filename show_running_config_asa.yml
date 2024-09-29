@@ -5,6 +5,7 @@
   hosts: CNBJSoCFW0
   vars:
     ansible_network_os: cisco.asa.asa
+    ansible_ssh_args: "-o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss -o Ciphers=+3des-cbc"
 
   collections:
     - cisco.asa
