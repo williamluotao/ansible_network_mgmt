@@ -8,8 +8,8 @@
   tasks:
     - name: Show running configuration
       cisco.asa.asa_command:
-        commands: 
-		- show running-config
+        commands:
+        - show running-config
       register: output
 
     - name: Display the running configuration
