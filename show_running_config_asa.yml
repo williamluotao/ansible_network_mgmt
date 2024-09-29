@@ -1,13 +1,17 @@
-- name: save result to a file
+- name: Run show run on Cisco devices
   hosts: CNBJSoCFW0
-  gather_facts: false
+  gather_facts: no
   vars:
-    ansible_ssh_args: "-o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss -o Ciphers=+3des-cbc"
-
+    ansible_network_os: cisco.asa.asa
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_ssh_extra_args: "-o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss -o Ciphers=+3des-cbc"
   tasks:
-   - name: show cur config
-     raw: "show running-config"
+    - name: Show running configuration
+      cisco.asa.asa_command:
+        commands: 
+		- show running-config
+      register: output
 
-     register: print_output
-
-   - debug: var=print_output.stdout_lines
+    - name: Display the running configuration
+      debug:
+        var: output.stdout_lines
