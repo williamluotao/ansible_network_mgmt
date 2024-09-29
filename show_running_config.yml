@@ -1,5 +1,5 @@
 - name: Run show run on Cisco devices
-  hosts: all
+  hosts: CNBJS-LSR0
   gather_facts: no
   vars:
     ansible_network_os: cisco.ios.ios
