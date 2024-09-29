@@ -1,10 +1,9 @@
 - name: Run show run on Cisco devices
-  hosts: CNBJSoCFW0
+  hosts: CNBJS-LSR0
   gather_facts: no
   vars:
-    ansible_network_os: cisco.asa.asa
+    ansible_network_os: cisco.ios.ios
     ansible_connection: ansible.netcommon.network_cli
-    ansible_ssh_args: "-o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss -o Ciphers=+3des-cbc"
   tasks:
     - name: Show running configuration
       ansible.netcommon.cli_command:
