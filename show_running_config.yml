@@ -4,8 +4,6 @@
   vars:
     ansible_network_os: cisco.ios.ios
     ansible_connection: ansible.netcommon.network_cli
-    ansible_user: "{{ username }}"
-    ansible_password: "{{ password }}"
   tasks:
     - name: Show running configuration
       ansible.netcommon.cli_command:
