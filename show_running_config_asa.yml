@@ -4,6 +4,9 @@
   gather_facts: false
   hosts: CNBJSoCFW0
 
+  collections:
+    - cisco.asa
+
   tasks:
     - name: Show the ASA version
       cisco.asa.asa_command:
