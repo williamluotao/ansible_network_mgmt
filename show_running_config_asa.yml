@@ -3,6 +3,8 @@
   connection: network_cli
   gather_facts: false
   hosts: CNBJSoCFW0
+  vars:
+    ansible_network_os: cisco.asa.asa
 
   collections:
     - cisco.asa
