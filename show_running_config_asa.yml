@@ -5,11 +5,6 @@
   connection: network_cli
 
   vars:
-    ansible_user: ansible-user
-    ansible_ssh_pass: Ansible@user1
-    ansible_become: true
-    ansible_become_method: ansible.netcommon.enable
-    ansible_become_pass: Ansible@user1
     ansible_connection: ansible.netcommon.network_cli
     ansible_network_os: cisco.asa.asa
     ansible_python_interpreter: python
