@@ -5,7 +5,7 @@
   vars:
     ansible_network_os: cisco.asa.asa
     ansible_connection: ansible.netcommon.network_cli
-    ansible_ssh_extra_args: "-oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes256-ctr"
+    ansible_ssh_extra_args: "-oKexAlgorithms=+diffie-hellman-group1-sha1"
 
   tasks:
     - name: Show the ASA version
