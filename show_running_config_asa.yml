@@ -1,6 +1,6 @@
 ---
 - name: Show version for the ASA
-  connection: network_cli
+  connection: paramiko
   gather_facts: false
   hosts: CNBJSoCFW0
   vars:
