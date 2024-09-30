@@ -1,9 +1,9 @@
 ---
 - name: Show version for the ASA
-  connection: paramiko
   gather_facts: false
   hosts: CNBJSoCFW0
   vars:
+    ansible_connection: paramiko
     ansible_network_os: cisco.asa.asa
     ansible_ssh_args: "-o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss -o Ciphers=+3des-cbc"
 
