@@ -1,17 +1,18 @@
 ---
 - name: Run show run on Cisco devices
   hosts: CNBJSoCFW0
-  gather_facts: no
-  vars:
-    ansible_network_os: cisco.ios.ios
-    ansible_connection: ansible.netcommon.network_cli
-    ansible_ssh_args: -oKexAlgorithms=+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
-    ansible_ssh_common_args: -oKexAlgorithms=+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
-    ansible_ssh_extra_args: -oKexAlgorithms=+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+  gather_facts: false
+  connection: network_cli
+
+  collections:
+    - cisco.asa
+
   tasks:
     - name: Show running configuration
-      ansible.netcommon.cli_command:
-        command: show running-config
+      cisco.asa.asa_command:
+        commands:
+        - show version
+
       register: output
 
     - name: Display the running configuration
