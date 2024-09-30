@@ -5,9 +5,9 @@
   vars:
     ansible_network_os: cisco.ios.ios
     ansible_connection: ansible.netcommon.network_cli
-    ansible_ssh_args: -oKexAlgorithms=+diffie-hellman-group1-sha1
-    ansible_ssh_common_args: -oKexAlgorithms=+diffie-hellman-group1-sha1
-    ansible_ssh_extra_args: -oKexAlgorithms=+diffie-hellman-group1-sha1
+    ansible_ssh_args: -oKexAlgorithms=+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+    ansible_ssh_common_args: -oKexAlgorithms=+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+    ansible_ssh_extra_args: -oKexAlgorithms=+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
   tasks:
     - name: Show running configuration
       ansible.netcommon.cli_command:
